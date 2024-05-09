@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 abstract class Shapes {
      abstract double calculateArea();
      abstract double calculateVolume();
@@ -26,7 +25,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Select a shape:");
          System.out.println("1. Sphere");
-
         int choice = scanner.nextInt();
         double dim1, dim2;
         switch (choice) {
@@ -38,7 +36,7 @@ public class Main {
                 System.out.println("Volume of the sphere: " + sphere.calculateVolume());
                 break;
              default:
-                System.out.printIn("ERROR");
+                System.out.printIn("ERROR- INPUT NOT CORRECT");
                }
            scanner.close();
         }
