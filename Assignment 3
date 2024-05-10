@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+abstract class Shape {
+     abstract double calculateArea();
+}
+
+class Triangle extends Shape {
+    private double base;
+    private double height;
+
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    public double calculateArea() {
+        return 0.5 * base * height;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Pick a shape:");
+        System.out.println("1. Triangle");
+
+        int choice = scanner.nextInt();
+        double dim1, dim2;
+        switch (choice) {
+            case 1:
+                System.out.print("Input the base of the triangle: ");
+                dim1 = scanner.nextDouble();
+                System.out.print("Input the height of the triangle: ");
+                dim2 = scanner.nextDouble();
+                Triangle triangle = new Triangle(dim1, dim2);
+                System.out.println("Area of the triangle: " + triangle.calculateArea());
+                break;
+            default:
+                System.out.println("Wrong input");
+        }
+
+        scanner.close();
+    }
+}
