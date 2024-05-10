@@ -1,38 +1,39 @@
 import java.util.Scanner;
-
-abstract class Shape {
-abstract double calculateArea();
+abstract class Shapes {
+  abstract double calculateArea();
 }
-class Circle extends Shape {
+
+class Circle extends Shapes {
     private double radius;
 
-    public Circle(double radius) {
+    public Circle (double radius) {
         this.radius = radius;
     }
 
     public double calculateArea() {
         return Math.PI * radius * radius;
     }
+}
+
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
         System.out.println("Pick a shape:");
-        System.out.println("1. Circle");
-   
-       int choice = scanner.nextInt();
+         System.out.println("1. Circle");
+        int choice = scanner.nextInt();
         double dim1, dim2;
         switch (choice) {
             case 1:
-                System.out.print("Enter the radius of the circle: ");
+                System.out.print("Input the radius of the sphere: ");
                 dim1 = scanner.nextDouble();
                 Circle circle = new Circle(dim1);
                 System.out.println("Area of the circle: " + circle.calculateArea());
                 break;
-            default:
-                System.out.println("Incorrect option");
+                
+             default:
+             
+               System.out.println("Wrong input");
+               }
+           scanner.close();
         }
-
-        scanner.close();
-    }
-}
+     }
