@@ -12,7 +12,7 @@ class Cube extends Shapes {
         return 6 * face * face;
     }
     public double calculateVolume() {
-        return side * face * face;
+        return face * face * face;
     }
 }
 public class Main {
